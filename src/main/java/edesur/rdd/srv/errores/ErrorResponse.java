@@ -37,13 +37,13 @@ public final class ErrorResponse extends ResponseBase {
         return errorResponse;
     }
 
-    private ErrorResponse(String codigo, String descripcion_retorno) {
+    private ErrorResponse(String codigo_retorno, String descripcion_retorno) {
         super.setCodigoRetorno((codigo_retorno));
         super.setDescripcionRetorno((descripcion_retorno));
     }
 
     private ErrorResponse(BeanValidationException e) {
-        super.setCodigo(ErrorType.ParametersValidationError.getCodigo());
+        super.setCodigoRetorno(ErrorType.ParametersValidationError.getCodigoRetorno());
         String m = e.getMessage().replaceAll("(?s)^(.*)( for: .*)(errors: \\[.*\\])(.*)$", "$1, $3");
         super.setDescripcionRetorno(m);
         statusCode = Response.Status.BAD_REQUEST;

@@ -82,17 +82,19 @@ public class RddConsultaDeudaRequest {
 	//0095341010025350000126772102230015220228012062
 	
 	public void setValoresBarra() {
-		barEmpresa=valor_busqueda.substring(0, 3);
-		barSucursal = valor_busqueda.substring(3, 5);
-		barPlan = valor_busqueda.substring(5, 7);
-		barCliente = valor_busqueda.substring(7, 15);
-		barImporte = valor_busqueda.substring(15, 24);
-		barVcto1 = valor_busqueda.substring(24, 30);
-		barRecargo = valor_busqueda.substring(30, 36);
-		barVcto2 = valor_busqueda.substring(36, 40);
-		barCorrFactu = valor_busqueda.substring(40, 43);
-		barTipoBarra= valor_busqueda.substring(43, 45);
-		String barDV= valor_busqueda.substring(45, 46);
+		if(tipo_busqueda.equals("BARRA")){
+			barEmpresa=valor_busqueda.substring(0, 3);
+			barSucursal = valor_busqueda.substring(3, 5);
+			barPlan = valor_busqueda.substring(5, 7);
+			barCliente = valor_busqueda.substring(7, 15);
+			barImporte = valor_busqueda.substring(15, 24);
+			barVcto1 = valor_busqueda.substring(24, 30);
+			barRecargo = valor_busqueda.substring(30, 36);
+			barVcto2 = valor_busqueda.substring(36, 40);
+			barCorrFactu = valor_busqueda.substring(40, 43);
+			barTipoBarra= valor_busqueda.substring(43, 45);
+			String barDV= valor_busqueda.substring(45, 46);
+		}
 	}
 
 	public String getBarEmpresa(){ return barEmpresa; }

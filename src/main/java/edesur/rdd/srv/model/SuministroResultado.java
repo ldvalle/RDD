@@ -33,7 +33,7 @@ public class SuministroResultado {
 
     @Size(max = 4)
     @NotNull
-    private String codigoEmpresa = Configuracion.CodigoEmpresa;
+    private String codigoEmpresa = Configuracion.id_empresa;
 
     @NotNull
     private Date fechaCorte;

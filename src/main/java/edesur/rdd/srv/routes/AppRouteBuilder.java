@@ -11,6 +11,8 @@ public class AppRouteBuilder extends BaseRouteBuilder {
         from("cxfrs:bean:rsServer?bindingStyle=SimpleConsumer")
                 .routeId("restEndpointConsumer")
                 .choice()
+                    .when(header(CxfConstants.OPERATION_NAME).isEqualTo("consultaDeuda"))
+                        .to("direct:setRddConsulta")
                     .when(header(CxfConstants.OPERATION_NAME).isEqualTo("actuDataComer"))
                         .to("direct:setDataComer")
                     .when(header(CxfConstants.OPERATION_NAME).isEqualTo("consultaCorteRepo"))

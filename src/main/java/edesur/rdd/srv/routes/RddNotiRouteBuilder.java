@@ -23,7 +23,7 @@ public class RddNotiRouteBuilder extends  BaseRouteBuilder {
             .log(LoggingLevel.DEBUG, logname, "Registra Pago Cliente ${header.numeroCliente} Barra ${header.barraFactura}")
             .setHeader("response", body())
             .transacted()
-            .to("sql:classpath:sql/rddNotiPago.sql.sql?dataSource=#SynergiaDS&outputType=SelectOne&outputClass=edesur.rdd.srv.model.RddNotiResponse")
+            .to("sql:classpath:sql/rddNotiPago.sql?dataSource=#SynergiaDS&outputType=SelectOne&outputClass=edesur.rdd.srv.model.RddNotiResponse")
             .choice()
                 .when(body().isNull())
                     .log(LoggingLevel.DEBUG, logname, "Pago no imputado")

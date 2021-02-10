@@ -82,7 +82,7 @@ public class RddConsultaDeudaRequest {
 	//0095341010025350000126772102230015220228012062
 	
 	public void setValoresBarra() {
-		if(tipo_busqueda.equals("BARRA")){
+		if(tipo_busqueda.equals("cod_barra")){
 			barEmpresa=valor_busqueda.substring(0, 3);
 			barSucursal = valor_busqueda.substring(3, 5);
 			barPlan = valor_busqueda.substring(5, 7);

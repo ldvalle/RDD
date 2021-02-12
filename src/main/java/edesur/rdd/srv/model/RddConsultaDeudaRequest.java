@@ -42,6 +42,7 @@ public class RddConsultaDeudaRequest {
 
 
 	//-- Datos de la Barra
+/*	
 	private String barEmpresa;
 	private String barSucursal;
 	private String barPlan;
@@ -53,33 +54,33 @@ public class RddConsultaDeudaRequest {
 	private String barCorrFactu;
 	private String barTipoBarra;
 	private String barDV;
-	
+*/	
 
 	//Setters & Getters
-    public String getIdEmpresa() { return id_empresa; }
-    public void setIdEmpresa(String id_empresa) { this.id_empresa = id_empresa; }
+    public String getId_empresa() { return id_empresa; }
+    public void setId_empresa(String id_empresa) { this.id_empresa = id_empresa; }
 
-    public String getTipoBusqueda() { return tipo_busqueda; }
-    public void setTipoBusqueda(String tipo_busqueda) { this.tipo_busqueda = tipo_busqueda; }
+    public String getTipo_busqueda() { return tipo_busqueda; }
+    public void setTipo_busqueda(String tipo_busqueda) { this.tipo_busqueda = tipo_busqueda; }
 
-	public String getValorBusqueda(){ return valor_busqueda; }
-	public void setValorBusqueda(String valor_busqueda) { this.valor_busqueda = valor_busqueda; }
+	public String getValor_busqueda(){ return valor_busqueda; }
+	public void setValor_busqueda(String valor_busqueda) { this.valor_busqueda = valor_busqueda; }
 	
-	public String getCodRecaudador(){ return cod_recaudador; }
-	public void setCodRecaudador(String cod_recaudador) { this.cod_recaudador = cod_recaudador; }
+	public String getCod_recaudador(){ return cod_recaudador; }
+	public void setCod_recaudador(String cod_recaudador) { this.cod_recaudador = cod_recaudador; }
 	
-	public String getCredRecaudador(){ return cred_recaudador; }
-	public void setCredRecaudador(String cred_recaudador) { this.cred_recaudador = cred_recaudador; }
+	public String getCred_recaudador(){ return cred_recaudador; }
+	public void setCred_recaudador(String cred_recaudador) { this.cred_recaudador = cred_recaudador; }
 	
-	public String getCodOficinaRecaudador(){ return cod_oficina_recaudador; }
-	public void setCodOficinaRecaudador(String cod_oficina_recaudador) { this.cod_oficina_recaudador = cod_oficina_recaudador; }
+	public String getCod_oficina_recaudador(){ return cod_oficina_recaudador; }
+	public void setCod_oficina_recaudador(String cod_oficina_recaudador) { this.cod_oficina_recaudador = cod_oficina_recaudador; }
 
-	public String getCodCajaRecaudador(){ return cod_caja_recaudador; }
-	public void setCodCajaRecaudador(String cod_caja_recaudador) { this.cod_caja_recaudador = cod_caja_recaudador; }
+	public String getCod_caja_recaudador(){ return cod_caja_recaudador; }
+	public void setCod_caja_recaudador(String cod_caja_recaudador) { this.cod_caja_recaudador = cod_caja_recaudador; }
 
-	public String getNroCliente(){ return valor_busqueda; }
-	
 	//0095341010025350000126772102230015220228012062
+/*
+	public String getNroCliente(){ return valor_busqueda; }	
 	
 	public void setValoresBarra() {
 		if(tipo_busqueda.equals("cod_barra")){
@@ -109,7 +110,6 @@ public class RddConsultaDeudaRequest {
 	public String getBarTipoBarra(){ return barTipoBarra; }
 	public String getBarDV(){ return barDV; }
 	
-	
-	
+*/	
 	
 }

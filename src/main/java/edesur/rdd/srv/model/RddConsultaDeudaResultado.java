@@ -55,32 +55,32 @@ public class RddConsultaDeudaResultado{
 	private String publicidad;
 	
 	/* Getters & Setters  */
-	public String getCodBarra() { return cod_barra;	}
-	public void setCodBarra(String cod_barra) { this.cod_barra = cod_barra; }	
+	public String getCod_barra() { return cod_barra;	}
+	public void setCod_barra(String cod_barra) { this.cod_barra = cod_barra; }	
 	
-	public void setTipoDeuda(String tipo_deuda){ this.tipo_deuda = tipo_deuda; }
-	public String getTipoDeuda(){ return tipo_deuda; }
+	public void setTipo_deuda(String tipo_deuda){ this.tipo_deuda = tipo_deuda; }
+	public String getTipo_deuda(){ return tipo_deuda; }
 	
-	public void setMontoDeuda(BigDecimal monto_deuda){ this.monto_deuda = monto_deuda; }
-	public BigDecimal getMontoDeuda(){ return monto_deuda; }
+	public void setMonto_deuda(BigDecimal monto_deuda){ this.monto_deuda = monto_deuda; }
+	public BigDecimal getMonto_deuda(){ return monto_deuda; }
 	
-	public void setTipoDocumento(String tipo_documento){ this.tipo_documento = tipo_documento; }
-	public String getTipoDocumento(){ return tipo_documento; }
+	public void setTipo_documento(String tipo_documento){ this.tipo_documento = tipo_documento; }
+	public String getTipo_documento(){ return tipo_documento; }
 
-	public void setNumeroDocumento(String numero_documento){ this.numero_documento = numero_documento; }
-	public String getNumeroDocumento(){ return numero_documento; }
+	public void setNumero_documento(String numero_documento){ this.numero_documento = numero_documento; }
+	public String getNumero_documento(){ return numero_documento; }
 
-	public void setFechaEmision(String fecha_emision){ this.fecha_emision = fecha_emision; }
+	public void setFecha_emision(String fecha_emision){ this.fecha_emision = fecha_emision; }
 	public String getFechaEmision(){ return fecha_emision; }
 	
-	public void setFechaVencimiento(String fecha_vencimiento){ this.fecha_vencimiento = fecha_vencimiento; }
-	public String getFechaVencimiento(){ return fecha_vencimiento; }	
+	public void setFecha_vencimiento(String fecha_vencimiento){ this.fecha_vencimiento = fecha_vencimiento; }
+	public String getFecha_vencimiento(){ return fecha_vencimiento; }	
 	
-	public void setNombreCliente(String nombre_cliente){ this.nombre_cliente = nombre_cliente; }
-	public String getNombreCliente(){ return nombre_cliente; }	
+	public void setNombre_cliente(String nombre_cliente){ this.nombre_cliente = nombre_cliente; }
+	public String getNombre_cliente(){ return nombre_cliente; }	
 	
-	public void setEstadoCliente(String estado_cliente){ this.estado_cliente = estado_cliente; }
-	public String getEstadoCliente(){ return estado_cliente; }
+	public void setEstado_cliente(String estado_cliente){ this.estado_cliente = estado_cliente; }
+	public String getEstado_cliente(){ return estado_cliente; }
 
 	public void setDireccion(String direccion){ this.direccion = direccion; }
 	public String getDireccion(){ return direccion; }

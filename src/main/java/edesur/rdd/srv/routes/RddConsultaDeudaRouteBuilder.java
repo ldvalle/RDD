@@ -20,20 +20,13 @@ public class RddConsultaDeudaRouteBuilder extends  BaseRouteBuilder {
         from("direct:setRddConsulta")
             .routeId("setRddConsulta")
             
-            .setHeader("codigoEmpresa", simple("${body.getIdEmpresa}"))
-            .setHeader("tipoBusqueda", simple("${body.getTipoBusqueda}"))
-            .setHeader("valorBusqueda", simple("${body.getValorBusqueda}"))
-            .setHeader("codigoRecaudador", simple("${body.getCodRecaudador}"))
-            .setHeader("credencialRecau", simple("${body.getCredRecaudador}"))
-            .setHeader("codOficinaRecau", simple("${body.getCodOficinaRecaudador}"))
-            .setHeader("codCajaRecau", simple("${body.getCodCajaRecaudador}"))
-            .setHeader("codSucursal", simple("${body.getCodSucursal}"))
-            .setHeader("codCajero", simple("${body.getCodCajero}"))
-
-			.to("class:edesur.rdd.srv.model.RddConsultaDeudaRequest?method=setValoresBarra")
-			
-            .setHeader("barCodEmpresa", simple("${body.getBarEmpresa}"))
-            
+            .setHeader("codigoEmpresa", simple("${body.getId_empresa}"))
+            .setHeader("tipoBusqueda", simple("${body.getTipo_busqueda}"))
+            .setHeader("valorBusqueda", simple("${body.getValor_busqueda}"))
+            .setHeader("codigoRecaudador", simple("${body.getCod_recaudador}"))
+            .setHeader("credencialRecau", simple("${body.getCred_recaudador}"))
+            .setHeader("codOficinaRecau", simple("${body.getCod_oficina_recaudador}"))
+            .setHeader("codCajaRecau", simple("${body.getCod_caja_recaudador}"))
             .log(LoggingLevel.DEBUG, logname, "Consulta deuda Cliente o Barra ${header.valorBusqueda}")
             .setHeader("response", body())
             //.transacted()
@@ -41,24 +34,11 @@ public class RddConsultaDeudaRouteBuilder extends  BaseRouteBuilder {
             .choice()
                 .when(body().isNull())
                     .log(LoggingLevel.DEBUG, logname, "Deuda No Existe")
-                    //.setBody(constant(ErrorResponse.create(ErrorType.PagoNoImputado)))
+                    .setBody(constant(ErrorResponse.create(ErrorType.DeudaNoExiste)))
                 .otherwise()
-					.enrich("sql:classpath:sql/rddConsultaDeuda.sql?dataSource=#SynergiaDS&outputType=SelectOne&outputClass=edesur.rdd.srv.model.RddConsultaDeudaResultado", listaResultado )
+					.enrich("sql:classpath:sql/rddConsultaDeuda.sql?dataSource=#SynergiaDS&outputType=SelectList&outputClass=edesur.rdd.srv.model.RddConsultaDeudaResultado", listaResultado )
                     .log(LoggingLevel.DEBUG, logname, "Deuda Informada")
             .end();            
              
-/*             
-			 .transacted()
-          .log(LoggingLevel.DEBUG, logname, "Actualiza Datos Comerciales Cliente ${header.numeroCliente}")
-          .setHeader("response", body())
-			 .to("sql:classpath:sql/spInsMiCliente.sql?dataSource=#SynergiaDS&outputType=SelectOne&outputClass=edesur.t1.srv.model.ActuDataComerResponse")
-			 .choice()
-			 .when(body().isNull())
-				  .log(LoggingLevel.DEBUG, logname, "Cliente ${header.numeroCliente} no existe")
-				  .setBody(constant(ErrorResponse.create(ErrorType.ClienteNoExiste)))
-			 .otherwise()
-				  .log(LoggingLevel.DEBUG, logname, "Cliente ${header.numeroCliente}: ${body}")
-			 .end();                
-*/
     }
 }

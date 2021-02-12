@@ -6,7 +6,9 @@ public enum ErrorType {
     ClienteNoEnEstado("E400SC0002", "Cliente Inexistente, Inactivo o en Ciclo de Facturación"),
 
     InternalError("E500SC0000", "Error Interno"),
+    DeudaNoExiste("E600SC0001", "Deuda no existe"),
     SqlError("E500SC0001", "Error SQL");
+    
 
     private String codigo_retorno;
     private String descripcion_retorno;
@@ -16,11 +18,11 @@ public enum ErrorType {
         this.descripcion_retorno = descripcion_retorno;
     }
 
-    public String getCodigoRetorno() {
+    public String getCodigo_retorno() {
         return codigo_retorno;
     }
 
-    public String getDescripcionRetorno() {
+    public String getDescripcion_retorno() {
         return descripcion_retorno;
     }
 

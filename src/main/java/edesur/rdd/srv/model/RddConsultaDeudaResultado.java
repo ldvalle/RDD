@@ -11,7 +11,6 @@ import java.util.Date;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
-
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
 	"cod_barra",
@@ -63,6 +62,10 @@ public class RddConsultaDeudaResultado{
 	
 	public void setMonto_deuda(BigDecimal monto_deuda){ this.monto_deuda = monto_deuda; }
 	public BigDecimal getMonto_deuda(){ return monto_deuda; }
+
+    private BigDecimal round(BigDecimal value) {
+        return value == null ? null : value.setScale(2, RoundingMode.HALF_EVEN);
+    }
 	
 	public void setTipo_documento(String tipo_documento){ this.tipo_documento = tipo_documento; }
 	public String getTipo_documento(){ return tipo_documento; }
@@ -96,12 +99,12 @@ public class RddConsultaDeudaResultado{
 	  final StringBuilder sb = new StringBuilder("RddConsultaDeudaResultado{");
 	  sb.append(", 'cod_barra'=").append(cod_barra);
 	  sb.append(", 'tipo_deuda'='").append(tipo_deuda).append('\'');
-	  sb.append(", 'monto_deuda'='").append(monto_deuda).append('\'');
+	  sb.append(", 'monto_deuda'=").append(monto_deuda);
 	  sb.append(", 'tipo_documento'='").append(tipo_documento).append('\'');
 	  sb.append(", 'numero_documento'='").append(numero_documento).append('\'');
 	  sb.append(", 'fecha_emision'='").append(fecha_emision).append('\'');
-      sb.append(", 'fecha_vencimiento'=").append(fecha_vencimiento);
-	  sb.append(", 'nombre_cliente'=").append(nombre_cliente);
+      sb.append(", 'fecha_vencimiento'='").append(fecha_vencimiento).append('\'');
+	  sb.append(", 'nombre_cliente'='").append(nombre_cliente).append('\'');
 	  sb.append(", 'estado_cliente'='").append(estado_cliente).append('\'');
 	  sb.append(", 'direccion'='").append(direccion).append('\'');
 	  sb.append(", 'mensaje'='").append(mensaje).append('\'');

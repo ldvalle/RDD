@@ -30,6 +30,9 @@ public class RddConsultaDeudaRouteBuilder extends  BaseRouteBuilder {
             .log(LoggingLevel.DEBUG, logname, "Consulta deuda Cliente o Barra ${header.valorBusqueda}")
             .setHeader("response", body())
             //.transacted()
+            .to("sql:classpath:sql/rddConsultaDeuda.sql?dataSource=#SynergiaDS&outputType=SelectOne&outputClass=edesur.rdd.srv.model.RddConsultaDeudaResponse")
+            .log(LoggingLevel.DEBUG, logname, "Deuda Informada");
+/*            
             .to("sql:classpath:sql/rddExisteDeuda.sql?dataSource=#SynergiaDS&outputType=SelectOne&outputClass=edesur.rdd.srv.model.RddConsultaDeudaResponse")
             .choice()
                 //.when(body().isNull())
@@ -41,6 +44,6 @@ public class RddConsultaDeudaRouteBuilder extends  BaseRouteBuilder {
 					.enrich("sql:classpath:sql/rddConsultaDeuda.sql?dataSource=#SynergiaDS&outputType=SelectList&outputClass=edesur.rdd.srv.model.RddConsultaDeudaResultado", listaResultado )
                     .log(LoggingLevel.DEBUG, logname, "Deuda Informada")
             .end();            
-             
+*/             
     }
 }

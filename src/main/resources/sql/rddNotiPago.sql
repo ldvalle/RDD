@@ -3,7 +3,7 @@ call rdd_notificacion_pago(
 :#${header.cod_recaudador},
 :#${header.cod_oficina_recaudador},
 :#${header.cod_caja_recaudador},
-:#${header.cod__barra},
+:#${header.cod_barra},
 :#${header.numero_comprobante},
 :#${header.fecha_rendicion},
 :#${header.fecha_pago_recaudador},

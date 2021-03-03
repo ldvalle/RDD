@@ -13,10 +13,8 @@ public class AppRouteBuilder extends BaseRouteBuilder {
                 .choice()
                     .when(header(CxfConstants.OPERATION_NAME).isEqualTo("consultaDeuda"))
                         .to("direct:setRddConsulta")
-                    .when(header(CxfConstants.OPERATION_NAME).isEqualTo("actuDataComer"))
-                        .to("direct:setDataComer")
-                    .when(header(CxfConstants.OPERATION_NAME).isEqualTo("consultaCorteRepo"))
-                        .to("direct:setConsultaCorteRepo")                        
+                    .when(header(CxfConstants.OPERATION_NAME).isEqualTo("notificaPago"))
+                        .to("direct:setRddNoti")
                         
                     .otherwise()
                         .log(LoggingLevel.ERROR, "Operacion no implementada: " + header(CxfConstants.OPERATION_NAME))

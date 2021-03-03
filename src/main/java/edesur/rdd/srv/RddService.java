@@ -3,13 +3,8 @@ package edesur.rdd.srv;
 import edesur.rdd.srv.model.RddConsultaDeudaRequest;
 import edesur.rdd.srv.model.RddConsultaDeudaResponse;
 
-/*
-import edesur.rdd.srv.model.ActuDataComerRequest;
-import edesur.rdd.srv.model.ActuDataComerResponse;
-
-import edesur.rdd.srv.model.ConsultaCorteRepoRequest;
-import edesur.rdd.srv.model.ConsultaCorteRepoResponse;
-*/
+import edesur.rdd.srv.model.RddNotiRequest;
+import edesur.rdd.srv.model.RddNotiResponse;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
@@ -21,23 +16,14 @@ import javax.ws.rs.core.MediaType;
 
 @Path("/")
 public class RddService {
-/*	
     @POST
-    @Path("/actuDataComer")
+    @Path("/notificaPago")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public ActuDataComerResponse actuDataComer(@NotNull @Valid ActuDataComerRequest request) {
-        return null;
-    }
-
-    @POST
-    @Path("/consultaCorteRepo")
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.APPLICATION_JSON)
-    public ConsultaCorteRepoResponse consultaCorteRepo(@NotNull @Valid ConsultaCorteRepoRequest request) {
+    public RddNotiResponse notificaPago(@NotNull @Valid RddNotiRequest request) {
         return null;
     }    
-*/
+
 
     @POST
     @Path("/consultaDeuda")

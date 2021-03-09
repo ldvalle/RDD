@@ -15,7 +15,8 @@ public class AppRouteBuilder extends BaseRouteBuilder {
                         .to("direct:setRddConsulta")
                     .when(header(CxfConstants.OPERATION_NAME).isEqualTo("notificaPago"))
                         .to("direct:setRddNoti")
-                        
+                    .when(header(CxfConstants.OPERATION_NAME).isEqualTo("reversaPago"))
+                        .to("direct:setRddReversa")                        
                     .otherwise()
                         .log(LoggingLevel.ERROR, "Operacion no implementada: " + header(CxfConstants.OPERATION_NAME))
                 .end();

@@ -6,6 +6,9 @@ import edesur.rdd.srv.model.RddConsultaDeudaResponse;
 import edesur.rdd.srv.model.RddNotiRequest;
 import edesur.rdd.srv.model.RddNotiResponse;
 
+import edesur.rdd.srv.model.RddReversaPagoRequest;
+import edesur.rdd.srv.model.RddReversaPagoResponse;
+
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.ws.rs.Consumes;
@@ -24,7 +27,6 @@ public class RddService {
         return null;
     }    
 
-
     @POST
     @Path("/consultaDeuda")
     @Consumes(MediaType.APPLICATION_JSON)
@@ -33,4 +35,12 @@ public class RddService {
         return null;
     }	
 
+    @POST
+    @Path("/reversaPago")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public RddReversaPagoResponse reversaPago(@NotNull @Valid RddReversaPagoRequest request) {
+        return null;
+    }	
+    
 }

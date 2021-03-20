@@ -30,22 +30,8 @@ public class RddConsultaDeudaRouteBuilder extends  BaseRouteBuilder {
             .log(LoggingLevel.DEBUG, logname, "Consulta deuda Cliente o Barra ${header.valorBusqueda}")
             .setHeader("response", body())
             //.transacted()
-            .to("sql:classpath:sql/rdd_valida_deuda.sql?dataSource=#SynergiaDS&outputType=SelectOne&outputClass=edesur.rdd.srv.model.RddConsultaDeudaResponse")
-            //.enrich("sql:classpath:sql/rddConsultaDeuda.sql?dataSource=#SynergiaDS&outputType=SelectList&outputClass=edesur.rdd.srv.model.RddConsultaDeudaResultado", listaResultado )
-            //.log(LoggingLevel.DEBUG, logname, "Deuda Informada");
-            //.setHeader("codRetorno", simple("${body.getCodigo_retorno}"))
-            //.setBody(simple("${response.getCodigo_retorno}"))
-
-            .choice()
-				//.when(header("codRetorno").isEqualTo("0"))
-				//.when(body().contains("OK"))
-				.when().simple("${body.codigo_retorno} == '0  '")
-					.enrich("sql:classpath:sql/rddConsultaDeuda.sql?dataSource=#SynergiaDS&outputType=SelectList&outputClass=edesur.rdd.srv.model.RddConsultaDeudaResultado", listaResultado )
-					.log(LoggingLevel.DEBUG, logname, "Deuda Informada")
-			.end();
-
-            //.to("sql:classpath:sql/rddConsultaDeuda.sql?dataSource=#SynergiaDS&outputType=SelectOne&outputClass=edesur.rdd.srv.model.RddConsultaDeudaResponse")
-            //.log(LoggingLevel.DEBUG, logname, "Deuda Informada");
+            .to("sql:classpath:sql/rddConsultaDeuda.sql?dataSource=#SynergiaDS&outputType=SelectOne&outputClass=edesur.rdd.srv.model.RddConsultaDeudaResponse")
+            .log(LoggingLevel.DEBUG, logname, "Deuda Informada");
 /*            
             .to("sql:classpath:sql/rddExisteDeuda.sql?dataSource=#SynergiaDS&outputType=SelectOne&outputClass=edesur.rdd.srv.model.RddConsultaDeudaResponse")
             .choice()

@@ -1,4 +1,4 @@
-call rdd_consulta_deuda_v2(
+call rdd_valida_deuda(
 :#${header.codigoEmpresa},
 :#${header.tipoBusqueda},
 :#${header.valorBusqueda},

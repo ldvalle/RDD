@@ -20,26 +20,29 @@ import javax.ws.rs.core.MediaType;
 @Path("/")
 public class RddService {
     @POST
-    @Path("/notificaPago")
+    //@Path("/notificaPago")
+    @Path("/wsRDDNotificaAr")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public RddNotiResponse notificaPago(@NotNull @Valid RddNotiRequest request) {
+    public RddNotiResponse wsRDDNotificaAr(@NotNull @Valid RddNotiRequest request) {
         return null;
     }    
 
     @POST
-    @Path("/consultaDeuda")
+    //@Path("/consultaDeuda")
+    @Path("/wsRDDConsultaAr")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public RddConsultaDeudaResponse consultaDeuda(@NotNull @Valid RddConsultaDeudaRequest request) {
+    public RddConsultaDeudaResponse wsRDDConsultaAr(@NotNull @Valid RddConsultaDeudaRequest request) {
         return null;
     }	
 
     @POST
-    @Path("/reversaPago")
+    //@Path("/reversaPago")
+    @Path("/wsRDDReversaAr")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public RddReversaPagoResponse reversaPago(@NotNull @Valid RddReversaPagoRequest request) {
+    public RddReversaPagoResponse wsRDDReversaAr(@NotNull @Valid RddReversaPagoRequest request) {
         return null;
     }	
     

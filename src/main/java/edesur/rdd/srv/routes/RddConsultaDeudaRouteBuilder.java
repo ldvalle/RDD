@@ -39,7 +39,7 @@ public class RddConsultaDeudaRouteBuilder extends  BaseRouteBuilder {
             .choice()
 				//.when(header("codRetorno").isEqualTo("0"))
 				//.when(body().contains("OK"))
-				.when().simple("${body.codigo_retorno} == '0  '")
+				.when().simple("${body.codigo_retorno} == '000'")
 					.enrich("sql:classpath:sql/rddConsultaDeuda.sql?dataSource=#SynergiaDS&outputType=SelectList&outputClass=edesur.rdd.srv.model.RddConsultaDeudaResultado", listaResultado )
 					.log(LoggingLevel.DEBUG, logname, "Deuda Informada")
 			.end();
